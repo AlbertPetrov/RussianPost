@@ -32,15 +32,15 @@ public class NumberOfThePublicationInChainHandlerStrategy extends NumberOfThePub
 	public String handle(Scanner scanner, String line) {
 		String l;
 		while (true) {
-			System.out.print("Введите номер публикации:");
+			System.out.print("Print a number of the publication:");
 			if (scanner.hasNextInt()) {
 				l = scanner.nextLine().trim();
 				if (Integer.parseInt(l) > 0) {
 					return newSubscriptionInfoHandler.handle(scanner, line + l + " ");
 				}
-				System.out.println("Введите номер публикации больше нуля");
+				System.out.println("A number of the publication must be biggest then zero");
 			} else {
-				System.out.println("Вы ввели не число");
+				System.out.println("PRINT A NUMBER!");
 				scanner.nextLine();
 			}
 		}		
