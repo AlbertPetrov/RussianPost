@@ -23,13 +23,13 @@ public class SurnameAndAbbreviatedHandler extends NewSubscriptionInfoHandler {
 	public String handle(Scanner scanner, String line) {
 		String l;
 		while (true) {
-			System.out.print("Введите фамилию и инициалы без точек:");
+			System.out.print("Enter a surname and abbreviated without point:");
 			l = scanner.nextLine();
 			if (l.split(" ").length != 3) {
-				System.out.println("Число членов ФИО не равно трём");
+				System.out.println("SURNAME AND ABBREVIATED MUST HAVE A THREE PARTS!");
 				continue;
 			} else if (l.matches(".*[0-9]+.*")) {
-				System.out.println("Имя не должно содержат цифр");
+				System.out.println("SURNAME AND ABBREVIATED CAN'T HAVE A NUMBERS");
 				continue;
 			}
 			l = l.replaceAll(" ", ".");
