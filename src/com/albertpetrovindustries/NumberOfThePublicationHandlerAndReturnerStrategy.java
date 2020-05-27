@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 /**
  * @author Christinica
- * @class NumberOfThePublicationHandlerAndReturnerContext processes our input of number of the publication and only returns it
+ * class NumberOfThePublicationHandlerAndReturnerContext processes our input of number of the publication and only returns it
  * @extends {@link NumberOfThePublicationHandlerContext}
  */
 public class NumberOfThePublicationHandlerAndReturnerStrategy extends NumberOfThePublicationHandlerStrategy {
 	
 	/**
-	 * @constructor NumberOfThePublicationHandlerAndReturnerContext gets implementations of {@link NumberOfThePublicationHandlerContext}
+	 * constructor NumberOfThePublicationHandlerAndReturnerContext gets implementations of {@link NumberOfThePublicationHandlerContext}
 	 * and {@link NewSubscriptionInfoHandle} 
 	 * @param numberOfThePublicationHandlerContext must take null
 	 * @param newSubscriptionInfoHandler
@@ -21,7 +21,7 @@ public class NumberOfThePublicationHandlerAndReturnerStrategy extends NumberOfTh
 	}
 	
 	/**
-	 * @method handle processes our input
+	 * method handle processes our input
 	 * @param scanner scans lines for our input
 	 * @param line must get an empty string
 	 * @return newLine if input is a number and number biggest then zero
