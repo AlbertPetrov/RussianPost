@@ -15,7 +15,7 @@ public class Post {
 	private Subscription[] subsctiptions = new Subscription[0];
 	
 	/**
-	 * @run adds, removes, prints, prints all subscriptions after your command inputing
+	 * run adds, removes, prints, prints all subscriptions after your command inputing
 	 */
 	public void run() {
 		boolean works = true;
