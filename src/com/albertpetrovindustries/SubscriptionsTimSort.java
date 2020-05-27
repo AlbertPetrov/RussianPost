@@ -12,7 +12,7 @@ public class SubscriptionsTimSort {
     // array[0...n-1] (similar to merge sort)  
     public static Subscription[] sort(Subscription[] subArr, int n)  
     {  
-    	// создание массива int для удобной сортировки Subscription
+    	// Recording NumbersOfThePublications in int array
     	int[] arr = new int[n];
     	for (int i = 0; i < n; i++) {
     		arr[i] = subArr[i].getNumberOfThePublication();
@@ -43,7 +43,7 @@ public class SubscriptionsTimSort {
                 merge(arr, left, mid, right); 
             } 
         }
-        // инициализация массива Subscription новыми int значениями
+        // Recording NumbersOfThePublications in Subscriptions array
         for (int i = 0; i < n; i++) {
         	subArr[i].setNumberOfThePublication(arr[i]);
         } 
