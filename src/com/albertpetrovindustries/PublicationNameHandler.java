@@ -28,12 +28,12 @@ public class PublicationNameHandler extends NewSubscriptionInfoHandler {
 	public String handle(Scanner scanner, String line) {
 		String l;
 		while (true) {
-			System.out.print("Введите имя публикации:");
+			System.out.print("Enter a publication number:");
 			l = scanner.nextLine();
 			if (l.length() > 0) {
 				return newSubscriptionInfoHandler.handle(scanner, line + l + " ");
 			}
-			System.out.print("Вы ничего не ввели.");
+			System.out.print("ENTER A NUMBER BIGGEST THAN ZERO!.");
 		}		
 	}
 
