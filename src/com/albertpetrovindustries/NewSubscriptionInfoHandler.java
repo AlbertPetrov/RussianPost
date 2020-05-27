@@ -9,7 +9,7 @@ import java.util.Scanner;
 public abstract class NewSubscriptionInfoHandler {
     
     /**
-     * @ield newSubscriptionInfoHandler invokes {@link handle} methods of implementations 
+     * field newSubscriptionInfoHandler invokes {@link handle} methods of implementations 
      *   of abstract class NewSubscriptionInfoHandler
      */
 	public NewSubscriptionInfoHandler newSubscriptionInfoHandler;
