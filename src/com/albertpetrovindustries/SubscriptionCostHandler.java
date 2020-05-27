@@ -26,15 +26,15 @@ public class SubscriptionCostHandler extends NewSubscriptionInfoHandler {
 	public String handle(Scanner scanner, String line) {
 		String l;
 		while (true) {
-			System.out.print("¬ведите цену ежемес€чное подписки:");
+			System.out.print("Enter a subscription number:");
 			if (scanner.hasNextInt()) {
 				l = scanner.nextLine().trim();
 				if (Integer.parseInt(l) > 0) {
 					return line + l;
 				}
-				System.out.println("¬ведите цену больше нул€");
+				System.out.println("NUMBER MUST BE BIGGEST THAN ZERO!");
 			} else {
-				System.out.println("¬ы ввели не число");
+				System.out.println("IT HAS TO BE A NUMBER!");
 				scanner.nextLine();
 			}
 		}
