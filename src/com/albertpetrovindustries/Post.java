@@ -64,7 +64,7 @@ public class Post {
                 	  												  infoParts[2], Integer.parseInt(infoParts[3]));
 			subsctiptions = newSubscriptions;
 		} else {
-			System.out.println("ЭЛЕМЕНТ С ТАКИМ НОМЕРОМ УЖЕ СУЩЕСТВУЕТ!!!");
+			System.out.println("THE NUMBER OF THE PUBLICATION IS ALREADY EXUSTS!!!");
 		}  
 	}  
 	
@@ -80,7 +80,7 @@ public class Post {
 		
 		int index = find(Integer.parseInt(numberOfThePublication));
 		if (index == -1) {
-			System.out.println("ЭЛЕМЕНТ НЕ НАЙДЕН!!!");
+			System.out.println("WE CAN'T FIND THE NUMBER OF THE PUBLICATION!!!");
 		} else {
 			Subscription[] newSubscriptions = new Subscription[subsctiptions.length - 1];
 			for (int i = 0; i < index; i++) {
@@ -104,7 +104,7 @@ public class Post {
 		
 		int index = find(Integer.parseInt(numberOfThePublication));
 		if (index == -1) {
-			System.out.println("ЭЛЕМЕНТ НЕ НАЙДЕН!!!");
+			System.out.println("!!!");
 		} else {
 			Subscription subsctiption = subsctiptions[index];
 			System.out.println("----------------------------------------------------------------" +
@@ -127,29 +127,28 @@ public class Post {
 		int last = subsctiptions.length - 1; 
 		int item = numberOfThePublication;
 		int position;
-        int comparisonCount = 1;    // для подсчета количества сравнений
+        int comparisonCount = 1;    
         
         SubscriptionsTimSort.sort(subsctiptions, subsctiptions.length);
         if (subsctiptions.length == 0) {
         	return -1;
         }
         long t = System.currentTimeMillis();
-        // для начала найдем индекс среднего элемента массива
         position = (first + last) / 2;
         while ((subsctiptions[position].getNumberOfThePublication() != item) && (first <= last)) {
             comparisonCount++;
-            if (subsctiptions[position].getNumberOfThePublication() > item) {  // если число заданного для поиска
-                last = position - 1; // уменьшаем позицию на 1.
+            if (subsctiptions[position].getNumberOfThePublication() > item) {
+                last = position - 1;
             } else {
-                first = position + 1;    // иначе увеличиваем на 1
+                first = position + 1;  
             }
             position = (first + last) / 2;
         }
         System.out.println("--------------------------------------------" +
-                           "\nРезультаты бинарного поиска:" +
-        		           "\nЭлементов в массиве: " + subsctiptions.length +
-        				   "\nКоличество сравнений: " + comparisonCount +
-        				   "\nВремя в секундах: " + ((System.currentTimeMillis() - t) / 1000.d) +
+                           "\nSearching results:" +
+        		           "\nSubscriptions: " + subsctiptions.length +
+        				   "\nComparisona: " + comparisonCount +
+        				   "\nTime in seconds: " + ((System.currentTimeMillis() - t) / 1000.d) +
         				   "\n--------------------------------------------");
         if (first <= last) {
         	return position;
