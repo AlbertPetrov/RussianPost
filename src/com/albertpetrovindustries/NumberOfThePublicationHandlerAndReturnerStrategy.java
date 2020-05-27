@@ -30,15 +30,15 @@ public class NumberOfThePublicationHandlerAndReturnerStrategy extends NumberOfTh
 	public String handle(Scanner scanner, String line) {
 		String newLine;
 		while (true) {
-			System.out.print("Введите номер публикации:");
+			System.out.print("Enter a number of the publication:");
 			if (scanner.hasNextInt()) {
 				newLine = scanner.nextLine().trim();
 				if (Integer.parseInt(newLine) > 0) {
 					return newLine;
 				}
-				System.out.println("Число не больше нуля");
+				System.out.println("Enter a number biggest than zero");
 			} else {
-				System.out.println("Вы ввели не число");
+				System.out.println("ENTER A NUMBER!");
 				scanner.nextLine();
 			}
 		}		
