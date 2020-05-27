@@ -8,6 +8,9 @@ import java.util.Scanner;
  */
 public class SurnameAndAbbreviatedHandler extends NewSubscriptionInfoHandler {
 
+	/**
+	 *  @param newSubscriptionInfoHandler takes Handler of next processing
+	 */
 	public SurnameAndAbbreviatedHandler(NewSubscriptionInfoHandler newSubscriptionInfoHandler) {
 		super(newSubscriptionInfoHandler);
 	}
