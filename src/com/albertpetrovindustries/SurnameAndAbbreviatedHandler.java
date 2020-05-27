@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author Christinica
- * @class SurnameAndAbbreviatedHandler processes the surnameAndAbbreviated
+ * class SurnameAndAbbreviatedHandler processes the surnameAndAbbreviated
  */
 public class SurnameAndAbbreviatedHandler extends NewSubscriptionInfoHandler {
 
@@ -13,7 +13,7 @@ public class SurnameAndAbbreviatedHandler extends NewSubscriptionInfoHandler {
 	}
 
 	/**
-	 *  @method handle new string and concats it with an old string if entered date
+	 *  method handle new string and concats it with an old string if entered date
 	 *    if we can split it in 3 parts and it is a number
 	 *  @param scanner scans lines for our input
 	 *  @param line is an old string
