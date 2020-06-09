@@ -55,17 +55,17 @@ public class Post {
 		String info = newSubscriptionInfoHandler.handle(scanner, "");
 		String[] infoParts = info.split(" ");
 		
-		if (find(Integer.parseInt(infoParts[1])) == -1) {
-			Subscription[] newSubscriptions = new Subscription[subsctiptions.length + 1];	
-			for (int i = 0; i < subsctiptions.length; i++) {
-				newSubscriptions[i] = subsctiptions[i];
-			}
-			newSubscriptions[subsctiptions.length] = new Subscription(infoParts[0], Integer.parseInt(infoParts[1]),
-                	  												  infoParts[2], Integer.parseInt(infoParts[3]));
-			subsctiptions = newSubscriptions;
-		} else {
-			System.out.println("THE NUMBER OF THE PUBLICATION IS ALREADY EXUSTS!!!");
-		}  
+		if (find(Integer.parseInt(infoParts[1])) != -1) {
+			System.out.println("THE NUMBER OF THE PUBLICATION IS ALREADY EXISTS!!!");
+			return;	
+		}
+		Subscription[] newSubscriptions = new Subscription[subsctiptions.length + 1];	
+		for (int i = 0; i < subsctiptions.length; i++) {
+			newSubscriptions[i] = subsctiptions[i];
+		}
+		newSubscriptions[subsctiptions.length] = new Subscription(infoParts[0], Integer.parseInt(infoParts[1]),
+                	  						  infoParts[2], Integer.parseInt(infoParts[3]));
+		subsctiptions = newSubscriptions;
 	}  
 	
 	/**
@@ -81,15 +81,16 @@ public class Post {
 		int index = find(Integer.parseInt(numberOfThePublication));
 		if (index == -1) {
 			System.out.println("WE CAN'T FIND THE NUMBER OF THE PUBLICATION!!!");
-		} else {
-			Subscription[] newSubscriptions = new Subscription[subsctiptions.length - 1];
-			for (int i = 0; i < index; i++) {
-				newSubscriptions[i] = subsctiptions[i];
-			}
-			for (int i = index + 1; i < subsctiptions.length - 2; i++) {
-				newSubscriptions[i] = subsctiptions[i];
-			}
-			subsctiptions = newSubscriptions;
+			return;
+		} 
+           	Subscription[] newSubscriptions = new Subscription[subsctiptions.length - 1];
+		for (int i = 0; i < index; i++) {
+			newSubscriptions[i] = subsctiptions[i];
+		}
+		for (int i = index + 1; i < subsctiptions.length - 2; i++) {
+			newSubscriptions[i] = subsctiptions[i];
+		}
+		subsctiptions = newSubscriptions;
 		}
 	}
 	
@@ -104,14 +105,15 @@ public class Post {
 		
 		int index = find(Integer.parseInt(numberOfThePublication));
 		if (index == -1) {
-			System.out.println("!!!");
-		} else {
-			Subscription subsctiption = subsctiptions[index];
-			System.out.println("----------------------------------------------------------------" +
-					   		   "\nsNumberOfThePublication: " + subsctiption.getNumberOfThePublication() +
-					   		   "\nPublicationName: " + subsctiption.getPublicationName() + 
-					   		   "\nSubscriptionCost: " + subsctiption.getSubscriptionCost() +
-					   		   "\nSurnameAndAbbreviated: " + subsctiption.getSurnameAndAbbreviated() +
+			System.out.println("We can't find the element!!!");
+			return;
+		}
+		Subscription subsctiption = subsctiptions[index];
+		System.out.println("----------------------------------------------------------------" +
+					   "\nsNumberOfThePublication: " + subsctiption.getNumberOfThePublication() +
+					   "\nPublicationName: " + subsctiption.getPublicationName() + 
+					   "\nSubscriptionCost: " + subsctiption.getSubscriptionCost() +
+					   "\nSurnameAndAbbreviated: " + subsctiption.getSurnameAndAbbreviated() +
 	                   		   "\n-----------------------------------------------------------------");
 		}
 	}
@@ -152,9 +154,8 @@ public class Post {
         				   "\n--------------------------------------------");
         if (first <= last) {
         	return position;
-        } else {
-        	return position = -1;
         }
+        return position = -1;
 	}
 	
     /**
